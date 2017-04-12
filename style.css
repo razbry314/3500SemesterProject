@@ -4,17 +4,6 @@
   margin-top: -20px;
 }
 
-.nav-back{
-  background-color: darkgray;
-
-}
-
-.nav-button-back{
-  background-color: silver;
-}
-
-.nav-button-back li:hover{
-  background-color: black;
-
-
+.navbar-right{
+  margin-top: 3px;
 }
