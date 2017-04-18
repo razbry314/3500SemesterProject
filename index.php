@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>Harmonix</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -33,7 +33,7 @@
 
 <body>
 
-<?php include 'harmonix-header.php'; ?>
+<?php include 'includes/harmonix-header.php'; ?>
 
     <!-- Page Content -->
     <div class="container">
@@ -79,7 +79,7 @@
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="#">Deals & Steals</a>
+                                <h3 class="text-center"><a href="store-grid.php">Deals & Steals</a>
                                 </h3>
 
                             </div>
@@ -90,7 +90,7 @@
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="#">Electric Guitars</a>
+                                <h3 class="text-center"><a href="store-grid.php">Electric Guitars</a>
                                 </h3>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="#">Acoustic Guitars</a>
+                                <h3 class="text-center"><a href="store-grid.php">Acoustic Guitars</a>
                                 </h3>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="#">Amps</a>
+                                <h3 class="text-center"><a href="store-grid.php">Amps</a>
                                 </h3>
                             </div>
                         </div>
@@ -120,7 +120,7 @@
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="#">Audio</a>
+                                <h3 class="text-center"><a href="store-grid.php">Audio</a>
                                 </h3>
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="#">Band</a>
+                                <h3 class="text-center"><a href="store-grid.php">Band</a>
                                 </h3>
                             </div>
                         </div>
