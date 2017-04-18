@@ -18,6 +18,9 @@
     <link href="css/shop-homepage.css" rel="stylesheet">
 
     <link href="style.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.10.1/bootstrap-social.css" rel="stylesheet" >
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -148,11 +151,17 @@
 
         <!-- Footer -->
         <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Harmonix 2017</p>
-                </div>
-            </div>
+        <div class="text-center">
+        <p style="float: left;">&copy; Harmonix Inc.</p>
+        <p style="float: right;">
+          <a onclick="" class="btn btn-social-icon btn-lg btn-facebook"><i class="fa fa-facebook"></i></a>
+          <a onclick="" class="btn btn-social-icon btn-lg btn-twitter"><i class="fa fa-twitter"></i></a>
+          <a onclick="" class="btn btn-social-icon btn-lg btn-google"><i class="fa fa-google-plus"></i></a>
+          <a onclick="" class="btn btn-social-icon btn-lg btn-pinterest"><i class="fa fa-pinterest"></i></a>
+        </p>
+
+    </div>
+
         </footer>
 
     </div>
