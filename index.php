@@ -76,7 +76,7 @@
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="store-grid.php">Deals & Steals</a>
+                                <h3 class="text-center"><a href="store-grid.php?sale=true">Deals & Steals</a>
                                 </h3>
 
                             </div>
@@ -87,7 +87,7 @@
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="store-grid.php">Electric Guitars</a>
+                                <h3 class="text-center"><a href="store-grid.php?type=eguitar">Electric Guitars</a>
                                 </h3>
                             </div>
                         </div>
@@ -97,7 +97,7 @@
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="store-grid.php">Acoustic Guitars</a>
+                                <h3 class="text-center"><a href="store-grid.php?type=aguitar">Acoustic Guitars</a>
                                 </h3>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="store-grid.php">Amps</a>
+                                <h3 class="text-center"><a href="store-grid.php?type=amp">Amps</a>
                                 </h3>
                             </div>
                         </div>
@@ -117,7 +117,7 @@
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="store-grid.php">Audio</a>
+                                <h3 class="text-center"><a href="store-grid.php?type=audio">Audio</a>
                                 </h3>
                             </div>
                         </div>
@@ -127,7 +127,7 @@
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="store-grid.php">Band</a>
+                                <h3 class="text-center"><a href="store-grid.php?type=band">Band</a>
                                 </h3>
                             </div>
                         </div>

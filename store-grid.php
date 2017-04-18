@@ -30,137 +30,191 @@
 
 <body>
 
-  <?php include 'includes/harmonix-header.php'; ?>
+  <?php include 'includes/harmonix-header.php';
+
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "Harmonixdb";
+
+  // Create connection
+  $conn = new mysqli($servername, $username, $password, $dbname);
+
+  // Check connection
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  }
+
+  ?>
 
     <!-- Page Content -->
     <div class="container">
-
         <!-- Page Header -->
+        <div class="col-lg-12">
         <div class="row">
+
             <div class="col-lg-12">
-                <h1 class="page-header">Page Heading</h1>
+                <h1 class="page-header text-center">$instrumentType</h1>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="col-lg-3">
+            <div class="well">
+              test
+            </div>
+        </div>
+        <div class="col-lg-9">
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-3 portfolio-item">
+              <div class="thumbnail">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3 class="text-center">
+                    <a href="#">$name</a>
+                </h3>
+                <p>$price</p>
+              </div>
+            </div>
+            <div class="col-md-3 portfolio-item">
+              <div class="thumbnail">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3 class="text-center">
+                    <a href="#">$name</a>
+                </h3>
+                <p>$price</p>
+              </div>
+            </div>
+            <div class="col-md-3 portfolio-item">
+              <div class="thumbnail">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3 class="text-center">
+                    <a href="#">$name</a>
+                </h3>
+                <p>$price</p>
+              </div>
+            </div>
+            <div class="col-md-3 portfolio-item">
+              <div class="thumbnail">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3 class="text-center">
+                    <a href="#">$name</a>
+                </h3>
+                <p>$price</p>
+              </div>
             </div>
         </div>
         <!-- /.row -->
 
         <!-- Projects Row -->
         <div class="row">
-            <div class="col-md-4 portfolio-item">
+          <div class="col-md-3 portfolio-item">
               <div class="thumbnail">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                 </a>
                 <h3 class="text-center">
-                    <a href="#">Project Name</a>
+                    <a href="#">$name</a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p>$price</p>
               </div>
             </div>
-            <div class="col-md-4 portfolio-item">
+            <div class="col-md-3 portfolio-item">
               <div class="thumbnail">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                 </a>
                 <h3 class="text-center">
-                    <a href="#">Project Name</a>
+                    <a href="#">$name</a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p>$price</p>
               </div>
             </div>
-            <div class="col-md-4 portfolio-item">
+            <div class="col-md-3 portfolio-item">
               <div class="thumbnail">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                 </a>
                 <h3 class="text-center">
-                    <a href="#">Project Name</a>
+                    <a href="#">$name</a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p>$price</p>
               </div>
             </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-4 portfolio-item">
+            <div class="col-md-3 portfolio-item">
               <div class="thumbnail">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                 </a>
                 <h3 class="text-center">
-                    <a href="#">Project Name</a>
+                    <a href="#">$name</a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-              </div>
-            </div>
-            <div class="col-md-4 portfolio-item">
-              <div class="thumbnail">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3 class="text-center">
-                    <a href="#">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-              </div>
-            </div>
-            <div class="col-md-4 portfolio-item">
-              <div class="thumbnail">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3 class="text-center">
-                    <a href="#">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p>$price</p>
               </div>
             </div>
         </div>
 
         <!-- Projects Row -->
         <div class="row">
-            <div class="col-md-4 portfolio-item">
+            <div class="col-md-3 portfolio-item">
               <div class="thumbnail">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                 </a>
                 <h3 class="text-center">
-                    <a href="#">Project Name</a>
+                    <a href="#">$name</a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p>$price</p>
               </div>
             </div>
-            <div class="col-md-4 portfolio-item">
+            <div class="col-md-3 portfolio-item">
               <div class="thumbnail">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                 </a>
                 <h3 class="text-center">
-                    <a href="#">Project Name</a>
+                    <a href="#">$name</a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p>$price</p>
               </div>
             </div>
-            <div class="col-md-4 portfolio-item">
+            <div class="col-md-3 portfolio-item">
               <div class="thumbnail">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                 </a>
                 <h3 class="text-center">
-                    <a href="#">Project Name</a>
+                    <a href="#">$name</a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p>$price</p>
               </div>
             </div>
-        </div>
+            <div class="col-md-3 portfolio-item">
+              <div class="thumbnail">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3 class="text-center">
+                    <a href="#">$name</a>
+                </h3>
+                <p>$price</p>
+              </div>
+            </div>
+          </div>
         <!-- /.row -->
 
         <hr>
 
         <!-- Pagination -->
-        <div class="row text-center">
-            <div class="col-lg-12">
+        <!--<div class="row text-center">
+            <div class="col-lg-9">
                 <ul class="pagination">
                     <li>
                         <a href="#">&laquo;</a>
@@ -186,6 +240,7 @@
                 </ul>
             </div>
         </div>
+      </div>
         <!-- /.row -->
 
         <hr>
@@ -208,6 +263,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <?php $conn->close(); ?>
 
 </body>
 
