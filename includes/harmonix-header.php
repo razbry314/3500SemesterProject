@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="images/Harmonix2.png" class="Logo"></a>
+            <a class="navbar-brand" href="index.php"><img src="images/Harmonix2.png" class="Logo"></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
@@ -17,12 +17,12 @@
                 <li class="dropdown">
                     <a <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="#">Guitars</a></li>
-                      <li><a href="#">Basses</a></li>
-                      <li><a href="#">Amps</a></li>
-                      <li><a href="#">Drums</a></li>
-                      <li><a href="#">Audio</a></li>
-                      <li><a href="#">Band</a></li>
+                      <li><a href="store-grid.php">Guitars</a></li>
+                      <li><a href="store-grid.php">Basses</a></li>
+                      <li><a href="store-grid.php">Amps</a></li>
+                      <li><a href="store-grid.php">Drums</a></li>
+                      <li><a href="store-grid.php">Audio</a></li>
+                      <li><a href="store-grid.php">Band</a></li>
                     </ul>
                 </li>
                 <li>
