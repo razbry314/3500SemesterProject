@@ -8,10 +8,13 @@
   background-color: #EEEEEE;
   color: #333333;
   padding: 2px 6px 2px 6px;
+  margin: 7px 2px auto 2px;;
   border-top: 1px solid #CCCCCC;
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
+  border-radius: 10%;
+  width :auto;
 }
 </style>
 </style><nav class="navbar navbar-inverse navbar-fixed-top nav-back" role="navigation">
@@ -51,12 +54,12 @@
 
             <ul class="nav navbar-right">
               <li>
-                <a href="includes/login.php" class="button">Login</a>
+                <a href="includes/login.php" class="button" alt="Login" title="Login"><span class="glyphicon glyphicon-log-in"></span></a>
               </li>
             </ul>
             <ul class="nav navbar-right">
               <li>
-                <a href="includes/register.php" class="button">Register</a>
+                <a href="includes/register.php" class="button" title="Register" style="margin-left:4px;"><span class="glyphicon glyphicon-list-alt"></span></a>
               </li>
             </ul>
 
@@ -66,7 +69,7 @@
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
             <div class="input-group-btn">
-                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                <button class="button" type="submit" style="margin=8px;padding:10px;"><i class="glyphicon glyphicon-search"></i></button>
                 </div>
             </div>
             </form>

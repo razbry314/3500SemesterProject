@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <style>
+h2,label {
+  font-family: Impact, sans-serif;
+}
+
 form {
     border: 3px solid #f1f1f1;
 }
@@ -15,7 +19,7 @@ input[type=text], input[type=password] {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #C0C0C0;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -70,7 +74,7 @@ span.psw {
 
 <form action="../index.php" method="post">
   <div class="imgcontainer">
-    <img src="../images/avatar_1.png" alt="Avatar" class="avatar" style="width: 10%; height: 10%;">
+    <img src="../images/HarmonicsTestNoBackground.png" alt="Avatar" class="avatar" style="margin:-200px;">
   </div>
 
   <div class="container">
@@ -85,7 +89,7 @@ span.psw {
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
+    <a href="../index.php"><button type="button" class="cancelbtn">Cancel</button></a>
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </form>

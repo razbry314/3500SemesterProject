@@ -50,9 +50,11 @@
       {
           $row = mysql_fetch_array($checklogin);
           $email = $row['EmailAddress'];
+          $avatar= $row['Avatar'];
 
           $_SESSION['Username'] = $username;
           $_SESSION['EmailAddress'] = $email;
+          $_SESSION['Avatar'] = $avatar;
           $_SESSION['LoggedIn'] = 1;
 
           echo "<h1>Success</h1>";

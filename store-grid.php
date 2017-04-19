@@ -37,7 +37,49 @@
 
 <body>
 
-  <?php include 'includes/harmonix-header.php';
+
+  <?php include "includes/base.php"; ?>
+
+  <?php
+  if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
+  {
+       include "includes/harmonix-header-user.php";
+  }
+  elseif(!empty($_POST['username']) && !empty($_POST['password']))
+  {
+      $username = mysql_real_escape_string($_POST['username']);
+      $password = md5(mysql_real_escape_string($_POST['password']));
+
+      $checklogin = mysql_query("SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."'");
+
+      if(mysql_num_rows($checklogin) == 1)
+      {
+        $row = mysql_fetch_array($checklogin);
+        $email = $row['EmailAddress'];
+        $avatar= $row['Avatar'];
+
+        $_SESSION['Username'] = $username;
+        $_SESSION['EmailAddress'] = $email;
+        $_SESSION['Avatar'] = $avatar;
+        $_SESSION['LoggedIn'] = 1;
+
+          echo "<h1>Success</h1>";
+          echo "<p>We are now redirecting you to the member area.</p>";
+          echo "<meta http-equiv='refresh' content='=2;index.php' />";
+      }
+      else
+      {
+
+        echo '<script type="text/javascript">alert("Incorrect Login please try again");</script>';
+
+        include 'includes/harmonix-header.php';
+
+      }
+  }
+  else
+  {
+     include 'includes/harmonix-header.php';
+   }
   $servername = "localhost";
   $username = "root";
   $password = "";
@@ -132,7 +174,7 @@
                     ?>
                 </div>
                 <div class="form-check-label">
-                  
+
                 </div>
               </div>
             </div>
