@@ -81,10 +81,7 @@
   {
      include 'includes/harmonix-header.php';
    }
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "Harmonixdb";
+
   $type = $_GET["type"];
   $title = "";
 
@@ -127,15 +124,6 @@
       break;
   }
 
-
-
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-
-  // Check connection
-  if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-  }
   ?>
 
     <!-- Page Content -->
@@ -246,12 +234,11 @@
     <!-- /.container -->
     <div class="container">
 
-<<<<<<< HEAD
+
         <!-- Footer -->
       <?php include "includes/harmonix-footer.php" ?>
-=======
-      <?php include 'includes/harmonix-footer.php'; ?>
->>>>>>> bdffe5f009b38867ba637a20bfe4ff7bd8311a7c
+
+
 
     </div>
     <!-- jQuery -->
