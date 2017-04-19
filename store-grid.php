@@ -16,6 +16,7 @@
 
     <!-- Custom CSS -->
     <link href="css/shop-homepage.css" rel="stylesheet">
+    <link href="css/3-col-portfolio.css" rel="stylesheet">
 
     <link href="style.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -128,7 +129,7 @@
                     ?>
                 </div>
                 <div class="form-check-label">
-                  
+
                 </div>
               </div>
             </div>
@@ -137,22 +138,24 @@
         <!-- Projects Row -->
         <div class="row">
           <?php
-          $sql = "SELECT maker, model, price, img, type, sale FROM products ";
+          $sql = "SELECT id, maker, model, price, img, type, sale FROM products ";
           $sql .= $typeSql;
           $result = $conn->query($sql);
+
           if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
-            echo "<div class=\"col-md-3 portfolio-item\">
-              <div class=\"thumbnail\">
-                  <a href=\"#\">
+              $itemPrice = number_format($row['price'],2);
+            echo "<div class=\"col-sm-3 portfolio-item\">
+              <a href=\"product-view.php?id=". $row['id'] ."\">
+                <div class=\"thumbnail\">
                       <img class=\"img-responsive img-thumbnail\" src=\"SemesterProjectImg/". $row['img']  ."\" alt=\"\">
-                    </a>
                     <h3 class=\"text-center\">
-                      <a href=\"#\">". $row['maker'] . " ". $row['model'] ."</a>
+                      <a href=\"product-view.php?id=". $row['id'] ."\">". $row['maker'] . " ". $row['model'] ."</a>
                     </h3>
-                    <p>". $row['price'] ."</p>
-              </div>
+                    <p>\$". $itemPrice ."</p>
+                </div>
+                </a>
             </div>";
           }
         } ?>

@@ -53,7 +53,9 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
+                                  <a href="product-view.php?id=7">
                                     <img class="slide-image" src="SemesterProjectImg/CarImg1.png" alt="">
+                                  </a>
                                 </div>
                                 <div class="item">
                                     <img class="slide-image" src="http://placehold.it/800x300" alt="">
@@ -128,7 +130,7 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="SemesterProjectImg/egHomePage.png" alt="">
+                            <img src="SemesterProjectImg/bandHomePage.png" alt="">
                             <div class="caption">
                                 <h3 class="text-center"><a href="store-grid.php?type=band">Band</a>
                                 </h3>
