@@ -43,11 +43,12 @@ elseif(!empty($_POST['username']) && !empty($_POST['password']))
     $username = mysql_real_escape_string($_POST['username']);
     $password = md5(mysql_real_escape_string($_POST['password']));
 
-    $checklogin = mysql_query("SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."'");
+    $sql = "SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."'";
+    $result = $conn->query($sql);
 
-    if(mysql_num_rows($checklogin) == 1)
+
+    if ($result->num_rows ==1)
     {
-      $row = mysql_fetch_array($checklogin);
       $email = $row['EmailAddress'];
       $avatar= $row['Avatar'];
 
@@ -111,12 +112,13 @@ $id = $_GET["id"];
                 $sql = "SELECT id, price FROM products WHERE id = $id ";
                 $result = $conn->query($sql);
                 $row = $result->fetch_assoc();
+                $_SESSION['productid']= $row['id'];
                 $itemPrice = number_format($row['price'],2);
 
                 echo "<h3 class=\"text-center\">\$". $itemPrice ."</h3>";
                 ?>
                   <hr />
-                  <button type="submit" class="btn btn-info center-block">Add to Cart</button>
+                  <a href="add-cart.php"><button class="btn btn-info center-block">Add to Cart</button></a>
               </div>
             </div>
         </div>
