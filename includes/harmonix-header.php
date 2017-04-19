@@ -192,9 +192,9 @@ span.psw {
                $row = mysql_fetch_array($checklogin);
                $email = $row['EmailAddress'];
 
-               $_SESSION['Username'] = $username;
-               $_SESSION['EmailAddress'] = "charlie";
-               $_SESSION['LoggedIn'] = 1;
+               $_COOKIE['Username'] = $username;
+               $_COOKIE['EmailAddress'] = "charlie";
+               $_COOKIE['LoggedIn'] = 1;
 
                ?>
 

@@ -53,7 +53,7 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="SemesterProjectImg/CarImg1.png" alt="">
                                 </div>
                                 <div class="item">
                                     <img class="slide-image" src="http://placehold.it/800x300" alt="">
@@ -77,9 +77,9 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img src="SemesterProjectImg/dsHomePage.png" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="store-grid.php">Deals & Steals</a>
+                                <h3 class="text-center"><a href="store-grid.php?type=ds">Deals & Steals</a>
                                 </h3>
 
                             </div>
@@ -88,9 +88,9 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img class="img-responsive" src="SemesterProjectImg/egHomePage.png" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="store-grid.php">Electric Guitars</a>
+                                <h3 class="text-center"><a href="store-grid.php?type=eguitar">Electric Guitars</a>
                                 </h3>
                             </div>
                         </div>
@@ -98,9 +98,9 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img src="SemesterProjectImg/agHomePage.png" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="store-grid.php">Acoustic Guitars</a>
+                                <h3 class="text-center"><a href="store-grid.php?type=aguitar">Acoustic Guitars</a>
                                 </h3>
                             </div>
                         </div>
@@ -108,9 +108,9 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img src="SemesterProjectImg/ampHomePage.png" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="store-grid.php">Amps</a>
+                                <h3 class="text-center"><a href="store-grid.php?type=amps">Amps</a>
                                 </h3>
                             </div>
                         </div>
@@ -118,9 +118,9 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img src="SemesterProjectImg/audioHomePage.png" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="store-grid.php">Audio</a>
+                                <h3 class="text-center"><a href="store-grid.php?type=audio">Audio</a>
                                 </h3>
                             </div>
                         </div>
@@ -128,9 +128,9 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img src="SemesterProjectImg/egHomePage.png" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="store-grid.php">Band</a>
+                                <h3 class="text-center"><a href="store-grid.php?type=band">Band</a>
                                 </h3>
                             </div>
                         </div>
@@ -147,10 +147,15 @@
 
     <div class="container">
 
+<<<<<<< HEAD
         <hr>
 
         <!-- Footer -->
         <?php include "includes/harmonix-footer.php" ?>
+=======
+      <?php include 'includes/harmonix-footer.php'; ?>
+
+>>>>>>> bdffe5f009b38867ba637a20bfe4ff7bd8311a7c
     </div>
     <!-- /.container -->
 

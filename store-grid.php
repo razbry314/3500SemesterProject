@@ -15,9 +15,12 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/3-col-portfolio.css" rel="stylesheet">
     <link href="css/shop-homepage.css" rel="stylesheet">
+
     <link href="style.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.10.1/bootstrap-social.css" rel="stylesheet" >
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
@@ -34,137 +37,137 @@
 
 <body>
 
-  <?php include 'includes/harmonix-header.php'; ?>
+  <?php include 'includes/harmonix-header.php';
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "Harmonixdb";
+  $type = $_GET["type"];
+  $title = "";
+
+  switch ($type) {
+    case 'eguitar':
+      $title = "Electric Guitars";
+      $typeSql = "WHERE type = 'eguitar'";
+      break;
+    case 'aguitar':
+        $title = "Acoustic Guitars";
+        $typeSql = "WHERE type = 'aguitar'";
+        break;
+    case 'amps':
+      $title = "Amps";
+      $typeSql = "WHERE type = 'amps'";
+      break;
+    case 'audio':
+      $title = "Audio Supplies";
+      $typeSql = "WHERE type = 'audio'";
+      break;
+    case 'drum':
+      $title = "Drums";
+      $typeSql = "WHERE type = 'drums'";
+      break;
+    case 'bass':
+      $title = "Basses";
+      $typeSql = "WHERE type = 'bass'";
+      break;
+    case 'band':
+      $title = "Band Instruments";
+      $typeSql = "WHERE type = 'band'";
+      break;
+    case 'ds':
+      $title = "Deals & Steals";
+      $typeSql = "WHERE sale = 1";
+      break;
+    default:
+      $title = "All Products";
+      $typeSql = "";
+      break;
+  }
+
+
+
+  // Create connection
+  $conn = new mysqli($servername, $username, $password, $dbname);
+
+  // Check connection
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  }
+  ?>
 
     <!-- Page Content -->
     <div class="container">
-
         <!-- Page Header -->
+        <div class="col-lg-12">
         <div class="row">
+
             <div class="col-lg-12">
-                <h1 class="page-header">Page Heading</h1>
+                <h1 class="page-header text-center"><?php echo $title; ?></h1>
             </div>
         </div>
         <!-- /.row -->
-
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-4 portfolio-item">
-              <div class="thumbnail">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3 class="text-center">
-                    <a href="#">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-              </div>
-            </div>
-            <div class="col-md-4 portfolio-item">
-              <div class="thumbnail">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3 class="text-center">
-                    <a href="#">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-              </div>
-            </div>
-            <div class="col-md-4 portfolio-item">
-              <div class="thumbnail">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3 class="text-center">
-                    <a href="#">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+        <div class="col-lg-3">
+            <div class="well">
+              <div class="form-group">
+                <label for="keyFilter">Filter by Keyword</label>
+                <div>
+                  <input type="text" class="form-control" id="keyFilter">
+                </div>
+                <hr />
+                <label>Brand</label>
+                <br />
+                <div class="form-check-label">
+                  <?php
+                  $sql = "SELECT DISTINCT maker FROM products ";
+                  $sql .= $typeSql;
+                  $result = $conn->query($sql);
+                  if ($result->num_rows > 0) {
+                    // output data of each row
+                    while($row = $result->fetch_assoc()) {
+                      echo "<input type=\"checkbox\" class=\"form-check-input\">";
+                      echo $row['maker'];
+                      echo "<br />";
+                    }
+                  }
+                    ?>
+                </div>
+                <div class="form-check-label">
+                  
+                </div>
               </div>
             </div>
         </div>
-        <!-- /.row -->
-
+        <div class="col-lg-9">
         <!-- Projects Row -->
         <div class="row">
-            <div class="col-md-4 portfolio-item">
-              <div class="thumbnail">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3 class="text-center">
-                    <a href="#">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+          <?php
+          $sql = "SELECT maker, model, price, img, type, sale FROM products ";
+          $sql .= $typeSql;
+          $result = $conn->query($sql);
+          if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+            echo "<div class=\"col-md-3 portfolio-item\">
+              <div class=\"thumbnail\">
+                  <a href=\"#\">
+                      <img class=\"img-responsive img-thumbnail\" src=\"SemesterProjectImg/". $row['img']  ."\" alt=\"\">
+                    </a>
+                    <h3 class=\"text-center\">
+                      <a href=\"#\">". $row['maker'] . " ". $row['model'] ."</a>
+                    </h3>
+                    <p>". $row['price'] ."</p>
               </div>
-            </div>
-            <div class="col-md-4 portfolio-item">
-              <div class="thumbnail">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3 class="text-center">
-                    <a href="#">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-              </div>
-            </div>
-            <div class="col-md-4 portfolio-item">
-              <div class="thumbnail">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3 class="text-center">
-                    <a href="#">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-              </div>
-            </div>
-        </div>
-
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-4 portfolio-item">
-              <div class="thumbnail">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3 class="text-center">
-                    <a href="#">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-              </div>
-            </div>
-            <div class="col-md-4 portfolio-item">
-              <div class="thumbnail">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3 class="text-center">
-                    <a href="#">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-              </div>
-            </div>
-            <div class="col-md-4 portfolio-item">
-              <div class="thumbnail">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3 class="text-center">
-                    <a href="#">Project Name</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-              </div>
-            </div>
+            </div>";
+          }
+        } ?>
         </div>
         <!-- /.row -->
 
         <hr>
 
         <!-- Pagination -->
-        <div class="row text-center">
-            <div class="col-lg-12">
+        <!--<div class="row text-center">
+            <div class="col-lg-9">
                 <ul class="pagination">
                     <li>
                         <a href="#">&laquo;</a>
@@ -189,22 +192,29 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
         <!-- /.row -->
 
-        <hr>
+    <!-- /.container -->
+    <div class="container">
 
+<<<<<<< HEAD
         <!-- Footer -->
       <?php include "includes/harmonix-footer.php" ?>
+=======
+      <?php include 'includes/harmonix-footer.php'; ?>
+>>>>>>> bdffe5f009b38867ba637a20bfe4ff7bd8311a7c
 
     </div>
-    <!-- /.container -->
-
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <?php $conn->close(); ?>
 
 </body>
 
