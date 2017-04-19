@@ -51,12 +51,7 @@
 
             <ul class="nav navbar-right">
               <li>
-                <a href="includes/login.php" class="button">Login</a>
-              </li>
-            </ul>
-            <ul class="nav navbar-right">
-              <li>
-                <a href="includes/register.php" class="button">Register</a>
+                <a href="includes/logout.php" class="button">Logout</a>
               </li>
             </ul>
 
