@@ -50,11 +50,13 @@
       $username = mysql_real_escape_string($_POST['username']);
       $password = md5(mysql_real_escape_string($_POST['password']));
 
-      $checklogin = mysql_query("SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."'");
+      $sql = "SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."'";
+      $result = $conn->query($sql);
 
-      if(mysql_num_rows($checklogin) == 1)
+
+      if ($result->num_rows ==1)
       {
-        $row = mysql_fetch_array($checklogin);
+          $row = $result->fetch_assoc();
         $email = $row['EmailAddress'];
         $avatar= $row['Avatar'];
 

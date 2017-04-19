@@ -43,11 +43,13 @@ elseif(!empty($_POST['username']) && !empty($_POST['password']))
     $username = mysql_real_escape_string($_POST['username']);
     $password = md5(mysql_real_escape_string($_POST['password']));
 
-    $checklogin = mysql_query("SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."'");
+    $sql = "SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."'";
+    $result = $conn->query($sql);
 
-    if(mysql_num_rows($checklogin) == 1)
+
+    if ($result->num_rows ==1)
     {
-      $row = mysql_fetch_array($checklogin);
+      $row = $result->fetch_assoc();
       $email = $row['EmailAddress'];
       $avatar= $row['Avatar'];
       $userid= $row['UserID'];
@@ -79,18 +81,18 @@ else
  }?>
 
 <?php
-  if(!empty($_SESSION['UserID'])){
-    $cartquery = "SELECT * FROM cart WHERE userid = '".$_SESSION['UserID']."'";
+  if(!empty($_SESSION['Username'])){
+    $cartquery = "SELECT * FROM cart WHERE Username = '".$_SESSION['Username']."'";
     $result = $conn->query($cartquery);
 
     if($result->num_rows >= 1)
     {
       $row = $result->fetch_assoc();
-      $userid = $row['userid'];
+      $username = $row['Username'];
       $cartid = $row['cartid'];
       $prodid = $row['productid'];
 
-      $_SESSION['userid'] = $userid;
+      $_SESSION['Username'] = $username;
       $_SESSION['cartid'] = $cartid;
       $_SESSION['productid']= $prodid;
 
@@ -99,8 +101,12 @@ else
 ?>
 <div class="container">
   <?php
+  $cartquery = "SELECT * FROM products WHERE id = '".$_SESSION['productid']."'";
+  $result = $conn->query($cartquery);
 
     if ($result->num_rows > 0) {
+
+
       // output data of each row
       while($row = $result->fetch_assoc()) {
         if($row['id']== $_SESSION['productid']){?>
@@ -110,14 +116,14 @@ else
         				</div>
         				<div class="panel-body">
         					<div class="row">
-        						<div class="col-xs-2"><img class="img-responsive" src="images/.$row['img'].">
+        						<div class="col-xs-2"><img class="img-responsive" src="SemesterProjectImg/<?php echo $row['img'];?>">
         						</div>
         						<div class="col-xs-4">
-        							<h4 class="product-name"><strong>Maker: .$row['maker']. Model: .$row['model'].</strong></h4><h4><small>Product description</small></h4>
+        							<h4 class="product-name"><strong>Maker: <?php echo $row['maker'];?> </br>Model: <?php echo $row['model'];?></strong></h4><h4><small><?php echo $row['description']; ?></small></h4>
         						</div>
         						<div class="col-xs-6">
         							<div class="col-xs-6 text-right">
-        								<h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
+        								<h6><strong>$<?php echo $row['price'];?> <span class="text-muted">x</span></strong></h6>
         							</div>
         							<div class="col-xs-4">
         								<input type="text" class="form-control input-sm" value="1">
@@ -134,52 +140,7 @@ else
       }
     }
   ?>
-	<div class="row">
-		<div class="col-xs-8">
-			<div class="panel panel-info">
-				</div>
-				<div class="panel-body">
-					<div class="row">
-						<div class="col-xs-2"><img class="img-responsive" src="http://placehold.it/100x70">
-						</div>
-						<div class="col-xs-4">
-							<h4 class="product-name"><strong>Product name</strong></h4><h4><small>Product description</small></h4>
-						</div>
-						<div class="col-xs-6">
-							<div class="col-xs-6 text-right">
-								<h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
-							</div>
-							<div class="col-xs-4">
-								<input type="text" class="form-control input-sm" value="1">
-							</div>
-							<div class="col-xs-2">
-								<button type="button" class="btn btn-link btn-xs">
-									<span class="glyphicon glyphicon-trash"> </span>
-								</button>
-							</div>
-						</div>
-					</div>
-					<hr>
-					<div class="row">
-						<div class="col-xs-2"><img class="img-responsive" src="http://placehold.it/100x70">
-						</div>
-						<div class="col-xs-4">
-							<h4 class="product-name"><strong>Product name</strong></h4><h4><small>Product description</small></h4>
-						</div>
-						<div class="col-xs-6">
-							<div class="col-xs-6 text-right">
-								<h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
-							</div>
-							<div class="col-xs-4">
-								<input type="text" class="form-control input-sm" value="1">
-							</div>
-							<div class="col-xs-2">
-								<button type="button" class="btn btn-link btn-xs">
-									<span class="glyphicon glyphicon-trash"> </span>
-								</button>
-							</div>
-						</div>
-					</div>
+	
 					<hr>
 					<div class="row">
 						<div class="text-center">
