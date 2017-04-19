@@ -35,12 +35,13 @@
                 <li class="dropdown">
                     <a <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="store-grid.php">Guitars</a></li>
-                      <li><a href="store-grid.php">Basses</a></li>
-                      <li><a href="store-grid.php">Amps</a></li>
-                      <li><a href="store-grid.php">Drums</a></li>
-                      <li><a href="store-grid.php">Audio</a></li>
-                      <li><a href="store-grid.php">Band</a></li>
+                      <li><a href="store-grid.php?type=eguitar">Electric Guitars</a></li>
+                      <li><a href="store-grid.php?type=aguitar">Acoustic Guitars</a></li>
+                      <li><a href="store-grid.php?type=bass">Basses</a></li>
+                      <li><a href="store-grid.php?type=amps">Amps</a></li>
+                      <li><a href="store-grid.php?type=drums">Drums</a></li>
+                      <li><a href="store-grid.php?type=audio">Audio</a></li>
+                      <li><a href="store-grid.php?type=band">Band</a></li>
                     </ul>
                 </li>
                 <li>
