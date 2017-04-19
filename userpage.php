@@ -32,48 +32,8 @@
 </head>
 
 <body>
-  <?php include "includes/base.php"; ?>
 
-  <?php
-  if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
-  {
-       include "includes/harmonix-header-user.php";
-  }
-  elseif(!empty($_POST['username']) && !empty($_POST['password']))
-  {
-      $username = mysql_real_escape_string($_POST['username']);
-      $password = md5(mysql_real_escape_string($_POST['password']));
-
-      $checklogin = mysql_query("SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."'");
-
-      if(mysql_num_rows($checklogin) == 1)
-      {
-          $row = mysql_fetch_array($checklogin);
-          $email = $row['EmailAddress'];
-          $avatar= $row['Avatar'];
-
-          $_SESSION['Username'] = $username;
-          $_SESSION['EmailAddress'] = $email;
-          $_SESSION['Avatar'] = $avatar;
-          $_SESSION['LoggedIn'] = 1;
-
-          echo "<h1>Success</h1>";
-          echo "<p>We are now redirecting you to the member area.</p>";
-          echo "<meta http-equiv='refresh' content='=2;index.php' />";
-      }
-      else
-      {
-
-        echo '<script type="text/javascript">alert("Incorrect Login please try again");</script>';
-
-        include 'includes/harmonix-header.php';
-
-      }
-  }
-  else
-  {
-     include 'includes/harmonix-header.php';
-   }?>
+<?php include 'includes/harmonix-header.php'; ?>
 
     <!-- Page Content -->
     <div class="container">
@@ -93,9 +53,7 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                  <a href="product-view.php?id=7">
                                     <img class="slide-image" src="SemesterProjectImg/CarImg1.png" alt="">
-                                  </a>
                                 </div>
                                 <div class="item">
                                     <img class="slide-image" src="http://placehold.it/800x300" alt="">
@@ -170,7 +128,7 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="SemesterProjectImg/bandHomePage.png" alt="">
+                            <img src="SemesterProjectImg/egHomePage.png" alt="">
                             <div class="caption">
                                 <h3 class="text-center"><a href="store-grid.php?type=band">Band</a>
                                 </h3>

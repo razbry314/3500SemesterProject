@@ -32,48 +32,8 @@
 </head>
 
 <body>
-  <?php include "includes/base.php"; ?>
 
-  <?php
-  if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
-  {
-       include "includes/harmonix-header-user.php";
-  }
-  elseif(!empty($_POST['username']) && !empty($_POST['password']))
-  {
-      $username = mysql_real_escape_string($_POST['username']);
-      $password = md5(mysql_real_escape_string($_POST['password']));
-
-      $checklogin = mysql_query("SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."'");
-
-      if(mysql_num_rows($checklogin) == 1)
-      {
-          $row = mysql_fetch_array($checklogin);
-          $email = $row['EmailAddress'];
-          $avatar= $row['Avatar'];
-
-          $_SESSION['Username'] = $username;
-          $_SESSION['EmailAddress'] = $email;
-          $_SESSION['Avatar'] = $avatar;
-          $_SESSION['LoggedIn'] = 1;
-
-          echo "<h1>Success</h1>";
-          echo "<p>We are now redirecting you to the member area.</p>";
-          echo "<meta http-equiv='refresh' content='=2;index.php' />";
-      }
-      else
-      {
-
-        echo '<script type="text/javascript">alert("Incorrect Login please try again");</script>';
-
-        include 'includes/harmonix-header.php';
-
-      }
-  }
-  else
-  {
-     include 'includes/harmonix-header.php';
-   }?>
+<?php include 'includes/harmonix-header.php'; ?>
 
     <!-- Page Content -->
     <div class="container">
@@ -93,9 +53,7 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                  <a href="product-view.php?id=7">
-                                    <img class="slide-image" src="SemesterProjectImg/CarImg1.png" alt="">
-                                  </a>
+                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
                                 </div>
                                 <div class="item">
                                     <img class="slide-image" src="http://placehold.it/800x300" alt="">
@@ -119,9 +77,9 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="SemesterProjectImg/dsHomePage.png" alt="">
+                            <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="store-grid.php?type=ds">Deals & Steals</a>
+                                <h3 class="text-center"><a href="store-grid.php">Deals & Steals</a>
                                 </h3>
 
                             </div>
@@ -130,9 +88,9 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img class="img-responsive" src="SemesterProjectImg/egHomePage.png" alt="">
+                            <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="store-grid.php?type=eguitar">Electric Guitars</a>
+                                <h3 class="text-center"><a href="store-grid.php">Electric Guitars</a>
                                 </h3>
                             </div>
                         </div>
@@ -140,9 +98,9 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="SemesterProjectImg/agHomePage.png" alt="">
+                            <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="store-grid.php?type=aguitar">Acoustic Guitars</a>
+                                <h3 class="text-center"><a href="store-grid.php">Acoustic Guitars</a>
                                 </h3>
                             </div>
                         </div>
@@ -150,9 +108,9 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="SemesterProjectImg/ampHomePage.png" alt="">
+                            <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="store-grid.php?type=amps">Amps</a>
+                                <h3 class="text-center"><a href="store-grid.php">Amps</a>
                                 </h3>
                             </div>
                         </div>
@@ -160,9 +118,9 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="SemesterProjectImg/audioHomePage.png" alt="">
+                            <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="store-grid.php?type=audio">Audio</a>
+                                <h3 class="text-center"><a href="store-grid.php">Audio</a>
                                 </h3>
                             </div>
                         </div>
@@ -170,9 +128,9 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="SemesterProjectImg/bandHomePage.png" alt="">
+                            <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
-                                <h3 class="text-center"><a href="store-grid.php?type=band">Band</a>
+                                <h3 class="text-center"><a href="store-grid.php">Band</a>
                                 </h3>
                             </div>
                         </div>
@@ -189,13 +147,20 @@
 
     <div class="container">
 
-
         <hr>
 
         <!-- Footer -->
-
-      <?php include 'includes/harmonix-footer.php'; ?>
-
+        <footer>
+          <div class="text-center">
+            <p style="float: left;">&copy; Harmonix Inc.</p>
+            <p style="float: right;">
+              <a onclick="" class="btn btn-social-icon btn-lg btn-facebook"><i class="fa fa-facebook"></i></a>
+              <a onclick="" class="btn btn-social-icon btn-lg btn-twitter"><i class="fa fa-twitter"></i></a>
+              <a onclick="" class="btn btn-social-icon btn-lg btn-google"><i class="fa fa-google-plus"></i></a>
+              <a onclick="" class="btn btn-social-icon btn-lg btn-pinterest"><i class="fa fa-pinterest"></i></a>
+            </p>
+        </div>
+      </footer>
 
     </div>
     <!-- /.container -->

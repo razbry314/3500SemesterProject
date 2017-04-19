@@ -2,6 +2,7 @@
 
 
 <style>
+
 .button {
   font: bold 11px Arial;
   text-decoration: none;
@@ -16,7 +17,7 @@
   border-radius: 10%;
   width :auto;
 }
-</style>
+
 </style><nav class="navbar navbar-inverse navbar-fixed-top nav-back" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -51,15 +52,19 @@
                 </li>
             </ul>
 
-
             <ul class="nav navbar-right">
               <li>
-                <a href="includes/login.php" class="button" alt="Login" title="Login"><span class="glyphicon glyphicon-log-in"></span></a>
+                <a href="cart.php" class="button" title="Cart" style="margin-left:4px;"><span class="glyphicon glyphicon-shopping-cart"></span></a>
               </li>
             </ul>
             <ul class="nav navbar-right">
               <li>
-                <a href="includes/register.php" class="button" title="Register" style="margin-left:4px;"><span class="glyphicon glyphicon-list-alt"></span></a>
+                <a href="user-profile.php" class="button" title="User" style="margin-left:4px;"><span class="glyphicon glyphicon-user"></span></a>
+              </li>
+            </ul>
+            <ul class="nav navbar-right">
+              <li>
+                <a href="includes/logout.php" class="button" title="Logout" style="margin-left:4px;"><span class="glyphicon glyphicon-log-out"></span></a>
               </li>
             </ul>
 
