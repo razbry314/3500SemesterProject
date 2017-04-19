@@ -242,13 +242,8 @@
 
     <!-- /.container -->
     <div class="container">
-
-<<<<<<< HEAD
         <!-- Footer -->
       <?php include "includes/harmonix-footer.php" ?>
-=======
-      <?php include 'includes/harmonix-footer.php'; ?>
->>>>>>> bdffe5f009b38867ba637a20bfe4ff7bd8311a7c
 
     </div>
     <!-- jQuery -->

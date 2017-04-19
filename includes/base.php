@@ -1,11 +1,17 @@
 <?php
 session_start();
 
-$dbhost = "localhost"; // this will ususally be 'localhost', but can sometimes differ
+$servername = "localhost"; // this will ususally be 'localhost', but can sometimes differ
 $dbname = "Harmonixdb"; // the name of the database that you are going to use for this project
-$dbuser = "root"; // the username that you created, or were given, to access your database
+$username = "root"; // the username that you created, or were given, to access your database
+$password="";
 // the password that you created, or were given, to access your database
 
-mysql_connect($dbhost, $dbuser) or die("MySQL Error: " . mysql_error());
-mysql_select_db($dbname) or die("MySQL Error: " . mysql_error());
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 ?>

@@ -44,11 +44,13 @@
       $username = mysql_real_escape_string($_POST['username']);
       $password = md5(mysql_real_escape_string($_POST['password']));
 
-      $checklogin = mysql_query("SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."'");
+      $sql = "SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."'";
+      $result = $conn->query($sql);
 
-      if(mysql_num_rows($checklogin) == 1)
+
+      if ($result->num_rows ==1)
       {
-          $row = mysql_fetch_array($checklogin);
+          $row = $result->fetch_assoc();
           $email = $row['EmailAddress'];
           $avatar= $row['Avatar'];
 
@@ -57,8 +59,6 @@
           $_SESSION['Avatar'] = $avatar;
           $_SESSION['LoggedIn'] = 1;
 
-          echo "<h1>Success</h1>";
-          echo "<p>We are now redirecting you to the member area.</p>";
           echo "<meta http-equiv='refresh' content='=2;index.php' />";
       }
       else

@@ -32,7 +32,7 @@
 <style>
 body {
 	margin-top: 20px;
-}</style>>
+}</style>
 <?php
 if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 {
@@ -50,11 +50,15 @@ elseif(!empty($_POST['username']) && !empty($_POST['password']))
       $row = mysql_fetch_array($checklogin);
       $email = $row['EmailAddress'];
       $avatar= $row['Avatar'];
+      $userid= $row['UserID'];
 
       $_SESSION['Username'] = $username;
       $_SESSION['EmailAddress'] = $email;
       $_SESSION['Avatar'] = $avatar;
       $_SESSION['LoggedIn'] = 1;
+      $_SESSION['UserID']= $userid;
+
+
 
         echo "<h1>Success</h1>";
         echo "<p>We are now redirecting you to the member area.</p>";
@@ -74,25 +78,65 @@ else
    include 'includes/harmonix-header.php';
  }?>
 
+<?php
+  if(!empty($_SESSION['UserID'])){
+    $cartquery = "SELECT * FROM cart WHERE userid = '".$_SESSION['UserID']."'";
+    $result = $conn->query($cartquery);
+
+    if($result->num_rows >= 1)
+    {
+      $row = $result->fetch_assoc();
+      $userid = $row['userid'];
+      $cartid = $row['cartid'];
+      $prodid = $row['productid'];
+
+      $_SESSION['userid'] = $userid;
+      $_SESSION['cartid'] = $cartid;
+      $_SESSION['productid']= $prodid;
+
+  }
+}
+?>
 <div class="container">
+  <?php
+
+    if ($result->num_rows > 0) {
+      // output data of each row
+      while($row = $result->fetch_assoc()) {
+        if($row['id']== $_SESSION['productid']){?>
+          <div class="row">
+        		<div class="col-xs-8">
+        			<div class="panel panel-info">
+        				</div>
+        				<div class="panel-body">
+        					<div class="row">
+        						<div class="col-xs-2"><img class="img-responsive" src="images/.$row['img'].">
+        						</div>
+        						<div class="col-xs-4">
+        							<h4 class="product-name"><strong>Maker: .$row['maker']. Model: .$row['model'].</strong></h4><h4><small>Product description</small></h4>
+        						</div>
+        						<div class="col-xs-6">
+        							<div class="col-xs-6 text-right">
+        								<h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
+        							</div>
+        							<div class="col-xs-4">
+        								<input type="text" class="form-control input-sm" value="1">
+        							</div>
+        							<div class="col-xs-2">
+        								<button type="button" class="btn btn-link btn-xs">
+        									<span class="glyphicon glyphicon-trash"> </span>
+        								</button>
+        							</div>
+        						</div>
+        					</div>
+                  <?php
+        }
+      }
+    }
+  ?>
 	<div class="row">
 		<div class="col-xs-8">
 			<div class="panel panel-info">
-				<div class="panel-heading">
-					<div class="panel-title">
-						<div class="row">
-							<div class="col-xs-6">
-								<h5><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</h5>
-							</div>
-							<div class="col-xs-6">
-                <a href="index.php">
-								<button type="button" class="btn btn-primary btn-sm btn-block">
-									<span class="glyphicon glyphicon-share-alt"></span> Continue shopping
-								</button>
-                <a>
-							</div>
-						</div>
-					</div>
 				</div>
 				<div class="panel-body">
 					<div class="row">
