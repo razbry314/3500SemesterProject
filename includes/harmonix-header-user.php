@@ -40,7 +40,6 @@
                       <li><a href="store-grid.php?type=aguitar">Acoustic Guitars</a></li>
                       <li><a href="store-grid.php?type=bass">Basses</a></li>
                       <li><a href="store-grid.php?type=amps">Amps</a></li>
-                      <li><a href="store-grid.php?type=drums">Drums</a></li>
                       <li><a href="store-grid.php?type=audio">Audio</a></li>
                       <li><a href="store-grid.php?type=band">Band</a></li>
                     </ul>
