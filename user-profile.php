@@ -30,7 +30,6 @@
 
 </head>
 
-<style>
 <?php
 if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 {
@@ -41,11 +40,12 @@ elseif(!empty($_POST['username']) && !empty($_POST['password']))
     $username = mysql_real_escape_string($_POST['username']);
     $password = md5(mysql_real_escape_string($_POST['password']));
 
-    $checklogin = mysql_query("SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."'");
+    $checklogin = "SELECT * FROM users WHERE Username = '".$username."' AND Password = '".$password."'";
+    $result = $conn->query($checklogin);
 
-    if(mysql_num_rows($checklogin) == 1)
+    if ($result->num_rows ==1 )
     {
-      $row = mysql_fetch_array($checklogin);
+      $row =$result->fetch_assoc();
       $email = $row['EmailAddress'];
       $avatar= $row['Avatar'];
 
@@ -84,7 +84,6 @@ else
                         <h4>
                             <?php
                               echo $_SESSION['Username'];
-                              echo $_SESSION['Avatar'];
                              ?></h4>
                         <small><cite title="San Francisco, USA">San Francisco, USA <i class="glyphicon glyphicon-map-marker">
                         </i></cite></small>

@@ -233,12 +233,17 @@
 
     <!-- /.container -->
     <div class="container">
+<<<<<<< HEAD
 
 
         <!-- Footer -->
       <?php include "includes/harmonix-footer.php" ?>
 
 
+=======
+        <!-- Footer -->
+      <?php include "includes/harmonix-footer.php" ?>
+>>>>>>> 883e826440d0f31cf1708233d21926e24950e8b4
 
     </div>
     <!-- jQuery -->

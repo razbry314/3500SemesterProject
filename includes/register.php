@@ -84,17 +84,19 @@ if(!empty($_POST['username']) && !empty($_POST['password']))
     $email = mysql_real_escape_string($_POST['email']);
     $avatar = $_POST['avatar'];
 
-     $checkusername = mysql_query("SELECT * FROM users WHERE Username = '".$username."'");
 
-     if(mysql_num_rows($checkusername) == 1)
-     {
+     $sql = "SELECT Username FROM users WHERE Username = '.$username.'";
+     $result = $conn->query($sql);
+
+     if ($result->num_rows >0){
+
         echo "<h1>Error</h1>";
         echo "<p>Sorry, that username is taken. Please go back and try again.</p>";
      }
      else
      {
-        $registerquery = mysql_query("INSERT INTO users (Username, Password, EmailAddress, Avatar) VALUES('".$username."', '".$password."', '".$email."', '".$avatar."')");
-        if($registerquery)
+        $sqli = "INSERT INTO users (Username, Password, EmailAddress, Avatar) VALUES('".$username."', '".$password."', '".$email."', '".$avatar."')";
+        if ($conn->query($sqli) === TRUE) 
         {
             echo "<h1>Success</h1>";
             echo "<p>Your account was successfully created. Please <a href=login.php>click here to login</a>.</p>";
